@@ -5,7 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged, // 
+  onAuthStateChanged, //allows you to stay logged in when you refresh the page
 } from "firebase/auth";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
   React.useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      setLoading (false)
+      setLoading (false) //After it mounts, set it to false. It was initially true from useState.
       console.log(user);
       if (user) {
         setUser(user)
@@ -52,9 +52,10 @@ function App() {
       <button onClick={register}>Register</button>
       <button onClick={login}>Login</button>
       <button onClick={logout}>Logout</button>
-      {loading ? 'loading...' : user.email}
+      {loading ? 'loading...' : user.email} 
     </div>
   );
+  /**display loading if it's loading. Display user.email if not */
 }
 
 export default App;
