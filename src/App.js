@@ -42,7 +42,7 @@ function App() {
   }
 
   function logout(){
-    signOut(auth)
+    signOut(auth) //Signout
     setUser({}) //resets user to empty object. Necessary as we used State Hook in login function
   }
 
