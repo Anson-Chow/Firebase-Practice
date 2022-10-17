@@ -15,7 +15,6 @@ function App() {
   React.useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setLoading (false) //After it mounts, set it to false. It was initially true from useState.
-      console.log(user);
       if (user) {
         setUser(user)
       }
